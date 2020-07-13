@@ -22,7 +22,7 @@ INSERT INTO `testapp`.`department` (`id`, `department_name`) VALUES ('1002', 'Ne
 
 INSERT INTO `testapp`.`physician` (`id`, `experience_years`, `first_name`, `last_name`, `physician_id`, `qualifications`, `department_id`, `plan_id`, `state_id`) VALUES ('1', '1', 'akhil', 'deep', 'PR001', 'Mbbs', '1001', '1001', '1001');
 
-INSERT INTO `testapp`.`description` (`id`,`date_of_diagnosis`, `desp`, `symptoms`, `patient_id`, `physician_id`) VALUES ('1001','2020-07-03', 'godpls', 'god', '1001', '1');
+INSERT INTO description (`id`,`date_of_diagnosis`, `desp`, `symptoms`, `patient_id`, `physician_id`,`followup`, `followupdate`) VALUES ('1001','2020-07-03', 'godpls', 'god', '1001', '1',true,'2020-07-03');
 
 
 INSERT INTO `testapp`.`bill` (`id`, `amount`, `cardnumber`, `payment_status`, `paymentmode`, `description_id`) VALUES ('1001', '4000', '1234567891', 'paid', 'cash', '1001');
