@@ -22,6 +22,9 @@ INSERT INTO `testapp`.`department` (`id`, `department_name`) VALUES ('1002', 'Ne
 
 INSERT INTO `testapp`.`physician` (`id`, `experience_years`, `first_name`, `last_name`, `physician_id`, `qualifications`, `department_id`, `plan_id`, `state_id`) VALUES ('1', '1', 'akhil', 'deep', 'PR001', 'Mbbs', '1001', '1001', '1001');
 
+INSERT INTO `testapp`.`patient` (`id`, `contact`, `date_of_birth`, `email`, `first_name`, `last_name`, `plan_id`, `state_id`) VALUES ('1001', '7842717473', '2020-07-07', 'y@8', 'angara', 'yaswanth', '1001', '1001');
+
+
 INSERT INTO description (`id`,`date_of_diagnosis`, `desp`, `symptoms`, `patient_id`, `physician_id`,`followup`, `followupdate`) VALUES ('1001','2020-07-03', 'godpls', 'god', '1001', '1',true,'2020-07-03');
 
 
