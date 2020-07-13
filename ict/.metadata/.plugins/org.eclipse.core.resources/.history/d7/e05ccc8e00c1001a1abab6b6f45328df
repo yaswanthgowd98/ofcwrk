@@ -1,0 +1,133 @@
+package com.example.demo.controller;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.example.demo.Repository.DepartmentRepository;
+import com.example.demo.Repository.PatientRepository;
+import com.example.demo.Repository.PhysicianRepository;
+import com.example.demo.Repository.PlanRepository;
+import com.example.demo.Repository.StateRepository;
+import com.example.demo.model.Department;
+import com.example.demo.model.Physician;
+import com.example.demo.model.Plan;
+import com.example.demo.model.State;
+import com.example.demo.service.RegisterPatientService;
+import com.example.demo.service.TodoRepository;
+
+@Controller
+public class AutoPopulatingController {
+	@Autowired
+	TodoRepository repository;
+	@Autowired
+	RegisterPatientService rps;
+	@Autowired
+	PhysicianRepository phr;
+	@Autowired
+	StateRepository sr;
+	@Autowired
+	PlanRepository plr;
+	@Autowired
+	PatientRepository pr;
+	@Autowired
+	DepartmentRepository dr;
+	
+	//states
+		@ModelAttribute("states")
+	    public Map<State, String> buildState() 
+	   
+	    {
+		List<State> states=	sr.findAll();
+			Map<State,String> pairs = new HashMap<>();
+			Iterator<State> it=states.iterator();
+			int i=1;
+			while(it.hasNext())
+			{ 
+				State state=it.next();
+				System.out.println(state.getStatename());
+				pairs.put(state,state.getStatename());
+				i++;
+			}
+	        
+	        
+	        return pairs;
+	    } 
+		
+		
+		//plan
+		@ModelAttribute("plans")
+	    public Map<Plan, String> buildPlans() 
+	   
+	    {
+		List<Plan> plans=	plr.findAll();
+			Map<Plan,String> pairs = new HashMap<>();
+			Iterator<Plan> it=plans.iterator();
+			
+			while(it.hasNext())
+			{ 
+				Plan plan=it.next();
+				System.out.println(plan.getPlanName());
+				pairs.put(plan,plan.getPlanName());
+				
+			}
+	        
+	        
+	        return pairs;
+	    } 
+		
+		//physicians
+			//@ModelAttribute("physicians")
+		    public Map<Physician, String> buildPhysicians() 
+		   
+		    {
+			List<Physician> physicians=	phr.findAll();
+				Map<Physician,String> pairs = new HashMap<>();
+				Iterator<Physician> it=physicians.iterator();
+				
+				while(it.hasNext())
+				{ 
+					Physician physician=it.next();
+					System.out.println();
+					pairs.put(physician,physician.getFirstName()+" "+physician.getLastName());
+				
+				}
+		        
+		        
+		        return pairs;
+		    } 
+
+			
+			//departments
+			
+					@ModelAttribute("departments")
+				    public Map<Department, String> buildDepartments() 
+				   
+				    {
+					List<Department> departments=	dr.findAll();
+						Map<Department,String> pairs = new HashMap<>();
+						Iterator<Department> it=departments.iterator();
+						
+						while(it.hasNext())
+						{ 
+							Department department=it.next();
+							System.out.println();
+							pairs.put(department,department.getDepartmentName());
+							
+						}
+				        
+				        
+				        return pairs;
+				    } 
+		
+		
+		
+		
+		
+		
+}

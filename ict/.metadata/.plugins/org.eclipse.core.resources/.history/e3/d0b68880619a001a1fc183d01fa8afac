@@ -1,0 +1,19 @@
+package com.example.demo.dao;
+
+
+
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.demo.model.Customer;
+
+public interface Crep extends CrudRepository<Customer, Integer>{
+
+		
+	public boolean existsByCpassword(String cpassword);
+	public boolean existsByCa1(String ca1);
+	public boolean existsByCa2(String ca2);
+	public boolean existsByCa3(String ca3);
+	public boolean exis
+}

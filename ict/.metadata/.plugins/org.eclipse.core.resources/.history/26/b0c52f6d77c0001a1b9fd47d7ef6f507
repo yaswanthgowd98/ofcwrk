@@ -1,0 +1,125 @@
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+<script>
+	$('#targetDate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+
+	$('#dateOfBirth').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+	$('#dateOfDiagnosis').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+	
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+      $('select').selectize({
+          sortField: 'text'
+      });
+  });
+  </script>
+  
+ <script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+ 
+  <script>
+  
+  $('#followupdate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+  $('#followupdate').prop('disabled','false');
+  $(function(){
+      $('#followup').on('click',function(){
+          if(this.checked)
+              {
+            
+        	  $('#followupdate').prop('disabled','');
+        	  $('#followupdate').prop('required','required');
+              }
+          else
+              {
+        	  $('#followupdate').prop('disabled','false');
+            	 
+            	  }
+      });
+  }); 
+  </script>   
+  
+  
+  <script>
+  
+  $(function(){
+      $('#followup').on('click',function(){
+          if(this.checked)
+              {
+            
+        	  $('#followupdate').prop('disabled','');
+        	  $('#followupdate').prop('required','required');
+              }
+          else
+              {
+        	  $('#followupdate').prop('disabled','false');
+            	 
+            	  }
+      });
+  }); 
+  </script>   
+  
+  <script>
+  function function myFunction() {
+  if(document.getElementById("followup").checked) {
+	    document.getElementById('followupdate').disabled = false;
+	    $('#followupdate').prop('required','required');
+	}
+  else
+	  {
+	  document.getElementById('followupdate').disabled = true;
+	  }
+  }
+  </script>
+  
+  
+  
+ <!--  
+<script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+  <script>
+  $('#followupdate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+  $('#display').css('display','none');
+   // Hide the text input box in default
+  $(function(){
+      $('#followup').on('click',function(){
+          if(this.checked) {
+        	 
+        	  $('#display').css('display','block');
+        	  
+        	  $('#followupdate').prop('required','required');
+       		
+           $('#followupdate').css('display','block');
+           
+         
+         } else {
+        	 $('#display').css('display','none');
+           $('#followupdate').css('display','none');
+           
+         }
+          
+      });
+  }); 
+    </script>
+     -->
+    
+   
+    
+    
+    
+ 
+</body>
+</html>
