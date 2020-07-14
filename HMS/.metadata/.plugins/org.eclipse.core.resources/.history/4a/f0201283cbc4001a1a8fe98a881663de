@@ -1,0 +1,8 @@
+package snippet;
+
+public class Snippet {
+	INSERT INTO plan (id,cost, plan_name) VALUES (1001,'1000', 'Plan1');
+	INSERT INTO plan (id,cost, plan_name) VALUES (1002,'2000', 'Plan2');
+	INSERT INTO plan (id,cost, plan_name) VALUES (1003,'3000', 'Plan3');
+}
+

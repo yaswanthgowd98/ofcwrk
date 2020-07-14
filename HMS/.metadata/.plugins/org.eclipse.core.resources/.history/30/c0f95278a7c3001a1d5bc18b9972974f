@@ -1,0 +1,200 @@
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+<script>
+	$('#targetDate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+
+	$('#dateOfBirth').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+	$('#dateOfDiagnosis').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+	
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+      $('select').selectize({
+          sortField: 'text'
+      });
+  });
+  </script>
+  
+ <script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+ 
+ <script>
+  
+  $('#followupdate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+  $('#followupdate').prop('disabled','false');
+  $(function(){
+      $('#followup').on('click',function(){
+          if(this.checked)
+              {
+            
+        	  $('#followupdate').prop('disabled','');
+        	  $('#followupdate').prop('required','required');
+              }
+          else
+              {
+        	  $('#followupdate').prop('disabled','false');
+            	 
+            	  }
+      });
+  }); 
+  </script>   
+  
+  <script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+  <script>
+  $('#followupdate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+  $(function(){
+      $('#followup').on('load',function(){
+          if(this.checked)
+              {
+            
+        	  $('#followupdate').prop('disabled','');
+        	  $('#followupdate').prop('required','required');
+              }
+          else
+              {
+        	  $('#followupdate').prop('disabled','false');
+            	 
+            	  }
+      });
+  }); 
+  </script>   
+  
+  
+
+ <!--  
+<script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+  <script>
+  $('#followupdate').datepicker({
+		format : 'dd/mm/yyyy'
+	});
+  $('#display').css('display','none');
+   // Hide the text input box in default
+  $(function(){
+      $('#followup').on('click',function(){
+          if(this.checked) {
+        	 
+        	  $('#display').css('display','block');
+        	  
+        	  $('#followupdate').prop('required','required');
+       		
+           $('#followupdate').css('display','block');
+           
+         
+         } else {
+        	 $('#display').css('display','none');
+           $('#followupdate').css('display','none');
+           
+         }
+          
+      });
+  }); 
+    </script>
+     -->
+    
+  <script type="text/javascript">
+function checkForm(form) 
+{ 
+	
+	
+	var id=document.getElementById('id').value;
+	var firstName=form.firstName.value;
+	
+
+	var lastName=form.lastName.value;
+	
+		if(id == ""&&firstName==""&&lastName=="")
+	{ 
+
+		document.getElementById("message").innerHTML = "Enter either Id or First and lastname to search";
+
+		$('#followupdate').prop('required','required');
+		form.id.focus(); 
+		return false; 
+	} 	
+		
+}
+
+</script>  
+    
+   
+   
+      
+    <script type="text/javascript">
+function checkCard(form) 
+{ 
+	var paymentMode=document.getElementById('paymentMode').value;
+	
+	var cardnumber=document.getElementById('cardNumber').value;
+
+	
+		if(paymentMode=="Card")
+	{ 
+            if(cardnumber==""||cardnumber==null)
+                {
+            	document.getElementById("message").innerHTML = "Enter Card number";
+            	form.cardNumber.focus(); 
+			
+                }
+
+		return false; 
+	} 	
+		
+		
+}
+ 
+
+
+   </script>
+   
+  
+   
+    <script type="text/javascript">
+
+   
+    function check() 
+    { 
+    	var paymentMode=document.getElementById('paymentMode').value;
+    	
+    	var cardnumber=document.getElementById('cardNumber').value;
+
+    	
+    		if(paymentMode=="Cash")
+    	{ 
+                
+                    
+                	$('#cardNumber').prop('disabled','false');
+    			
+                    	 
+    	} 	
+    		else
+        	{ 
+                    
+                        
+                    	$('#cardNumber').prop('disabled','');
+        			
+                        	 
+        	} 	
+    		
+    }
+   
+   </script> 
+    
+    
+    
+ 
+</body>
+</html>
